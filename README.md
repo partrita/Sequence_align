@@ -2,7 +2,7 @@
 Python script for DNA sequence alignments. Biopython의 기능을 사용.
 
 ## How to use
-1. 하나의 폴더안에 Template_DNA 파일과 Sequencing 결과 파일이 필요
+1. 하나의 폴더안에 Template_DNA.txt 파일과 Sequencing 결과 파일이 필요
 2. Align.py 스크립트를 복사해서 동일한 폴더에 넣음
 3. 스크립트 파일을 실행하면 algin_result.seq 파일이 생성
 
@@ -13,6 +13,7 @@ $ python Align.py
 
 ## 생각할점
 Template_DNA 파일에는 하나의 시퀀스만 들어있어야 함.
+파일의 확장자가 다름을 확인 할 것.
 모든 시퀀스는 엄격한 Fasta format의 형태 일 것
 
 ## 앞으로 수정할 점
