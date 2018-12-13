@@ -46,8 +46,9 @@ def align(query, f):
         reverse_2 = seq_record.seq[:1:-1].translate()
         reverse_3 = seq_record.seq[:2:-1].translate()
         # make list for loop
-        protein_seq = [forward_1, forward_2, forward_3,
-        reverse_1, reverse_2, reverse_3]
+        protein_seq = [
+            forward_1, forward_2, forward_3, reverse_1,
+            reverse_2, reverse_3]
         # alginments
         for i in protein_seq:
             # print frame name?
