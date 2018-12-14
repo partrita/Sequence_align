@@ -24,17 +24,22 @@ subject = glob.glob('Template_*.txt')[0]  # 1st template dna only
 template_ = SeqIO.read(subject, 'fasta')
 template_protein = template_.seq.translate()
 
+# Remove results files before run code
+try:
+    querys.remove(output)
+except ValueError:
+    print("Make algin_result files!")
+
 
 def align(query, f):
     for seq_record in SeqIO.parse(query, "fasta"):
-        print('#### DNA alignments : {} ####'.format(seq_record.id))
+        print('#### DNA alignments : {} is Done! ####'.format(seq_record.id))
         f.write('#### DNA alignments : {} ####\n'.format(seq_record.id))
         alignments = pairwise2.align.localms(
             seq_record.seq, template_.seq, 2, -3, -2, -2)
-        print(pairwise2.format_alignment(*alignments[0]))
         f.write(pairwise2.format_alignment(*alignments[0]))
         f.write('\n' * 2)  # add blank line
-        print('#### Protein alignments : {} ####'.format(seq_record.id))
+        print('#### Protein alignments : {} is Done! ####'.format(seq_record.id))
         f.write(
             '#### Protein alignments : {} ####\n'.format(seq_record.id))
         # f.write('\n') # add blank line
@@ -76,3 +81,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    print('#### Everything is finish! #####')
